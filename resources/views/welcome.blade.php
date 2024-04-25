@@ -11,5 +11,7 @@
    <div>
        <a href="{{ route('contacts.index') }}">All Contacts</a>
    </div>
+   
+
 </body>
 </html>
