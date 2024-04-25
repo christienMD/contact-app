@@ -7,9 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-   <h1>Contact App</h1>
-   <div>
-       <a href="{{ route('contacts.index') }}">All Contacts</a>
-   </div>
+<h1>Show Page Contact {{$id}}</h1>
+
 </body>
 </html>
