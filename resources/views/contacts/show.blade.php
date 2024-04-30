@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Show Page Contact {{$id}}</h1>
+<h1>Show Page Contact </h1>
 
 </body>
 </html>
