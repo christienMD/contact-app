@@ -2,16 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('layouts.public');
-});
 
-Route::get('/contacts', function () {
+function getContacts()
+{
     $contacts = [
         1 => ['name' => 'Name 1', 'phone' => '2142354534'],
         2 => ['name' => 'Name 2', 'phone' => '2110489534'],
         3 => ['name' => 'Name 3', 'phone' => '9832980437'],
     ];
+
+    return $contacts;
+}
+
+Route::get('/', function () {
+    return view('layouts.public');
+});
+
+Route::get('/contacts', function () {
+    $contacts = getContacts();
 
     $companies = [
         1 => ['name' => 'Company One', 'Contacts' => 3],
@@ -26,5 +34,9 @@ Route::get('/contacts/create', function () {
 })->name('contacts.create');
 
 Route::get('/contacts/{id}', function ($id) {
-    return "contact" . $id;
+    $contacts = getContacts();
+    abort_unless(isset($contacts[$id]), 404);
+    $contact = $contacts[$id];
+    return view('contacts.show', compact('contact'));
 })->name('contacts.show');
+
