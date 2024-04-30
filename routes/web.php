@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layouts.main');
+    return view('layouts.public');
 });
 
 Route::get('/contacts', function () {
